@@ -1,9 +1,42 @@
 const app = () => {
+    const notificationListTrigger = document.querySelector(".nav__notification-button");
+    const notificationList = document.querySelector(".nav__notification--list");
     const menuTrigger = document.querySelector(".nav__profile-menu-button");
     const profileMenu = document.querySelector(".nav__profile-menu--content");
     const menuItems = profileMenu.querySelectorAll(
         '[role="menuitem"]'
     );
+
+    const closeNotificationList = () => {
+      notificationListTrigger.ariaExpanded = "false";
+      notificationListTrigger.focus()
+    }
+
+    const handleNotificationListEscapeKeyPress = (event) => {
+      if (event.key === "Escape") {
+        toggleNotificationList();
+      }
+    }
+
+    const openNotificationList = () => {
+      notificationListTrigger.ariaExpanded = "true";
+  
+      notificationList.addEventListener(
+        "keyup",
+        handleNotificationListEscapeKeyPress
+      );
+    }
+
+    const toggleNotificationList = () => {
+      const isListExpanded = notificationListTrigger.attributes["aria-expanded"].value === "true";
+      notificationList.classList.toggle("active");
+
+      if (isListExpanded) {
+        closeNotificationList();
+      }else {
+        openNotificationList();
+      }
+    }
 
     const closeMenu = () => {
         menuTrigger.ariaExpanded = "false";
@@ -85,12 +118,12 @@ const app = () => {
       }
     
       const toggleMenu = () => {
-        const isExpanded =
+        const isMenuExpanded =
           menuTrigger.attributes["aria-expanded"].value ===
           "true";
         profileMenu.classList.toggle("active");
     
-        if (isExpanded) {
+        if (isMenuExpanded) {
           closeMenu();
         } else {
           openMenu();
@@ -98,6 +131,7 @@ const app = () => {
       }
     
       menuTrigger.addEventListener("click", toggleMenu);
+      notificationListTrigger.addEventListener("click", toggleNotificationList);
 
 }
 
