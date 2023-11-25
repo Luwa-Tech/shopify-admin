@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./app.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav" aria-label="Main Navigation">
+
+            <section>
+                <img class="nav__logo-desktop" src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
+                    alt="shopify logo" />
+                <img class="nav__logo-mobile" src="https://crushingit.tech/hackathon-assets/shopify-icon.svg"
+                    alt="shopify logo" />
+            </section>
+
+            <section>
+                <form class="nav__form">
+                    <button type="submit" class="nav__form--search-button" aria-label="Search">
+                        <img class="nav__form--search-icon"
+                            src="https://crushingit.tech/hackathon-assets/icon-search.svg" alt="search icon">
+                    </button>
+
+                    <input class="nav__form--input" type="text" placeholder="Search" aria-label="Search Input" />
+                </form>
+            </section>
+
+            <section class="flex">
+                <section class="nav__notification--container">
+                    <button type="button" class="nav__notification-button">
+                        <img class="nav__notification-icon" src="https://crushingit.tech/hackathon-assets/icon-bell.svg"
+                            alt="notification bell icon">
+                    </button>
+                </section>
+
+                <section class="nav__profile-menu-container">
+                    <button class="nav__profile-menu-button" type="button" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="nav__profile-menu--content">
+                        <span class="nav__profile-menu--brand-name">Davii Collections</span>
+                        <span class="nav__profile-menu--brand-abrv">DC</span>
+                    </button>
+
+                    <ul class="nav__profile-menu--content" role="menu" id="nav__menu-content" aria-labelledby="nav__profile-container">
+                    <li class="nav__profile-menu-brand">
+                        <div>
+                            <span class="brand-logo">DC</span>
+                            <span class="brand-name">Davii Collections</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.3332 4L5.99984 11.3333L2.6665 8" stroke="#303030" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </li>
+                    <li class="nav__menu--item"><button role="menuitem">
+                            <img src="https://crushingit.tech/hackathon-assets/icon-store.svg"/>
+                            <span>All stores</span>
+                    </button></li>
+                    <li class="nav__menu--item"><button role="menuitem">Help Center</button></li>
+                    <li class="nav__menu--item"><button role="menuitem">Changelog</button></li>
+                    <li class="nav__menu--item"><button role="menuitem">Community forums</button></li>
+                    <li class="nav__menu--item"><button role="menuitem">Hire a Shopify partner</a></li>
+                    <li class="nav__menu--item"><button role="menuitem">Keyboard shortcuts</button></li>
+                    <li class="nav__menu--item"><button role="menuitem">
+                            <span>David Micheal</span>
+                            <span>davidmicheal@gmail.com</span>
+                        </button></li>
+                    <li class="nav__menu--item"><button role="menuitem">Manage account</button></li>
+                    <li class="nav__menu--item"><button role="menuitem">Log out</button></li>
+                </ul>
+                </section>
+            </section>
+        </nav>
+    </header>
+
+    <main></main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
