@@ -35,20 +35,47 @@
 
             <section class="flex">
                 <section class="nav__notification--container">
-                    <button type="button" class="nav__notification-button">
+                    <button type="button" aria-haspopup="true" aria-expanded="false"
+                    aria-controls="nav__notification--list" class="nav__notification-button" id="nav__notification-list">
                         <img class="nav__notification-icon" src="https://crushingit.tech/hackathon-assets/icon-bell.svg"
                             alt="notification bell icon">
                     </button>
+
+                    <section class="nav__notification--list" aria-labelledby="nav__notification-list">
+                        <section>
+                            <span>Alerts</span>
+                            <div class="nav__notification-list__buttons-container">
+                                <button type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H16.25C16.6642 5.25 17 5.58579 17 6C17 6.41421 16.6642 6.75 16.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z" fill="#616161"/>
+                                        <path d="M6.75 14C6.75 13.5858 7.08579 13.25 7.5 13.25H12.5C12.9142 13.25 13.25 13.5858 13.25 14C13.25 14.4142 12.9142 14.75 12.5 14.75H7.5C7.08579 14.75 6.75 14.4142 6.75 14Z" fill="#616161"/>
+                                        <path d="M5.5 9.25C5.08579 9.25 4.75 9.58579 4.75 10C4.75 10.4142 5.08579 10.75 5.5 10.75H14.5C14.9142 10.75 15.25 10.4142 15.25 10C15.25 9.58579 14.9142 9.25 14.5 9.25H5.5Z" fill="#616161"/>
+                                      </svg>
+                                </button>
+                                <button type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <rect x="0.5" y="0.5" width="21" height="21" rx="4.5"/>
+                                        <path d="M14.2803 10.0303C14.5732 9.73744 14.5732 9.26256 14.2803 8.96967C13.9874 8.67678 13.5126 8.67678 13.2197 8.96967L10.25 11.9393L9.03033 10.7197C8.73744 10.4268 8.26256 10.4268 7.96967 10.7197C7.67678 11.0126 7.67678 11.4874 7.96967 11.7803L9.71967 13.5303C10.0126 13.8232 10.4874 13.8232 10.7803 13.5303L14.2803 10.0303Z" fill="#616161"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11ZM16.5 11C16.5 14.0376 14.0376 16.5 11 16.5C7.96243 16.5 5.5 14.0376 5.5 11C5.5 7.96243 7.96243 5.5 11 5.5C14.0376 5.5 16.5 7.96243 16.5 11Z" fill="#616161"/>
+                                      </svg>
+                                </button>
+                            </div>
+                        </section>
+                        <div class="nav__notification-list__message">
+                            <p>Alerts about your store and account will show here</p>
+                        </div>
+                    </section>
+
                 </section>
 
                 <section class="nav__profile-menu-container">
-                    <button class="nav__profile-menu-button" type="button" aria-haspopup="true" aria-expanded="false"
+                    <button class="nav__profile-menu-button" id="nav__profile-menu" type="button" aria-haspopup="true" aria-expanded="false"
                         aria-controls="nav__profile-menu--content">
                         <span class="nav__profile-menu--brand-name">Davii Collections</span>
                         <span class="nav__profile-menu--brand-abrv">DC</span>
                     </button>
 
-                    <ul class="nav__profile-menu--content" role="menu" id="nav__menu-content" aria-labelledby="nav__profile-container">
+                    <ul class="nav__profile-menu--content" role="menu" id="nav__menu-content" aria-labelledby="nav__profile-menu">
                     <li class="nav__profile-menu-brand">
                         <div>
                             <span class="brand-logo">DC</span>
