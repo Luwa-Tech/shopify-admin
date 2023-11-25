@@ -185,6 +185,13 @@ header {
 
     border-radius: 0.875rem;
     border: 1px solid var(--stroke-s50);
+    transition: all ease-in-out 0.15s;
+
+    display: none;
+}
+
+.nav__profile-menu--content.active {
+    display: block;
 }
 
 .nav__profile-menu-brand {
