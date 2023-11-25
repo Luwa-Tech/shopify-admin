@@ -13,7 +13,7 @@
     /* FONT COLORS */
     --font-color-light: #E3E3E3;
     --font-color-mid: #616161;
-    --font-color-dark: #475467;
+    --font-color-dark: #303030;
 
     /* STROKES */
     --stroke-s50: #EBEBEB;
@@ -100,7 +100,7 @@ header {
 }
 
 .nav__form:focus {
-    border: .1rem solid var(--layout-color-1);
+    border: .1rem solid var(--focused-state);
 }
 
 .flex {
@@ -128,8 +128,22 @@ header {
 
 .nav__profile-menu-button {
     background: var(--grey-color-200);
-    padding-left: .6rem;
-    border-radius: 6px;
+    border-radius: .5rem;
+    border: none;
+    color: var(--font-color-light);
+  
+    padding: .5rem 0.125rem .5rem 0.5rem;
+}
+
+.nav__profile-menu-button:hover,
+.nav__profile-menu-button:active,
+.nav__profile-menu-button:focus {
+    background: var(--grey-color-100);
+}
+
+.nav__profile-menu-container button:focus {
+    outline: none;
+    border: 0.125rem solid var(--focused-state)
 }
 
 .nav__profile-menu--brand-name {
@@ -184,7 +198,6 @@ header {
     padding: .4rem;
 }
 
-/* START HERE */
 .nav__profile-menu-brand div {
     display: flex;
     align-items: center;
@@ -201,17 +214,11 @@ header {
 }
 
 .nav__profile-menu-brand .brand-name {
-    font-size: 0.8125rem;
+    font-size: 0.8445rem;
     color: var(--font-color-dark);
     font-style: normal;
     font-weight: 600;
     line-height: 140%;
-}
-
-.nav__profile-menu--content li:nth-child(2) button {
-    display: flex;
-    gap: .3rem;
-    align-items: end;
 }
 
 .nav__menu--item {
@@ -226,7 +233,7 @@ header {
     background: transparent;
     color: var(--font-color-dark);
 
-    font-size: 0.8125rem;
+    font-size: 0.8445rem;
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
@@ -238,6 +245,27 @@ header {
 
     border-radius: 0.5rem;
     border: none;
+}
+
+.nav__profile-menu--content li:nth-child(2) button {
+    display: flex;
+    gap: .3rem;
+    align-items: end;
+}
+
+.nav__profile-menu--content li:nth-child(8) button {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__profile-menu--content li:nth-child(8) button span:nth-child(1) {
+    color: var(--font-color-dark);
+    font-weight: 500;
+}
+
+.nav__profile-menu--content li:nth-child(8) button span:nth-child(2) {
+    font-size: 0.75rem;
+    color: var(--grey-color-100);
 }
 
 .nav__menu--item button:hover {
