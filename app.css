@@ -376,6 +376,45 @@ header {
       Example focus style; adjust as needed 
     } */
 
+/*-------------------------------- MAIN ---------------------------------------*/
+.trial-subscription__container {
+    display: flex;
+    width: 60%;
+    margin: 2rem auto 1rem auto;
+    padding: 0.75rem 0.5rem 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--grey-color-300);
+    border-radius: .5rem;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--font-color-light);
+}
+
+.trial-subscription__container div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.trial-subscription__container div button:nth-child(1) {
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--font-color-dark);
+
+    border: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+}
+
+.trial-subscription__remove-button {
+    background: transparent;
+    border: none;
+}
+
 
 /* MOBILE QUERY */
 @media (max-width: 599px) {
