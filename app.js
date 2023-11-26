@@ -6,6 +6,12 @@ const app = () => {
     const menuItems = profileMenu.querySelectorAll(
         '[role="menuitem"]'
     );
+    const trialSubscriptionButton = document.querySelector(".trial-subscription__remove-button");
+    const trialSubscription = document.querySelector(".trial-subscription__container");
+    const accordionPanelButton = document.querySelector(".setup-guide__accordion--button");
+    const accordionPanel = document.querySelector(".setup-guide__accordion");
+    const hiddenIcon = document.querySelector(".setup-guide__accordion--hidden-icon");
+    const visibleIcon = document.querySelector(".setup-guide__accordion--visible-icon");
 
     const closeNotificationList = () => {
       notificationListTrigger.ariaExpanded = "false";
@@ -129,9 +135,44 @@ const app = () => {
           openMenu();
         }
       }
+
+      const handleTrialSubscription = () => {
+        trialSubscriptionButton.ariaExpanded = "false"
+        trialSubscription.classList.toggle("remove");
+      }
+
+
+      const closeAccordion = () => {
+        accordionPanelButton.ariaExpanded = "false";
+      }
+
+      const openAccordion = () => {
+        accordionPanelButton.ariaExpanded = "true";
+      }
+
+      const toggleAccordionPanel = () => {
+        const isAccordionExpanded = accordionPanelButton.attributes["aria-expanded"].value === "true";
+        accordionPanel.classList.toggle("open-accordion");
+
+        if (isAccordionExpanded) {
+          closeAccordion();
+        } else {
+          openAccordion();
+        }
+
+        if (hiddenIcon.style.display !== "none") {
+          hiddenIcon.style.display = "none";
+          visibleIcon.style.display = "inline-block";   
+        } else {
+          hiddenIcon.style.display = "inline-block";
+          visibleIcon.style.display = "none";   
+        }
+      }
     
       menuTrigger.addEventListener("click", toggleMenu);
       notificationListTrigger.addEventListener("click", toggleNotificationList);
+      trialSubscriptionButton.addEventListener("click", handleTrialSubscription);
+      accordionPanelButton.addEventListener("click", toggleAccordionPanel);
 
 }
 

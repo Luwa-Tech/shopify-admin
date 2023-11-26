@@ -20,6 +20,8 @@
     --stroke-s100: #E1E1E1;
     --stroke-s200: #616161;
     --stroke-s300: #36FBA1;
+    --stroke-s400: #F3F3F3;
+    --stroke-s500: #404040;
 
     /* COMPONENT STATES */
     --hover-state: #F7F7F7;
@@ -39,12 +41,17 @@ body {
     background: var(--layout-color-2);
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /*------------------------ HEADER ----------------------------------------------*/
 header {
     background-color: var(--grey-color-300);
     padding: .4rem .8rem;
     color: var(--font-color-light);
+    margin-bottom: 2rem;
 }
 
 .nav {
@@ -75,12 +82,12 @@ header {
     border: none;
 }
 
-.nav__form--search-icon {
+/* .nav__form--search-icon {
     filter: grayscale(100%) brightness(90%) contrast(40%);
     width: 1rem;
     height: 1rem;
 
-}
+} */
 
 .nav__form--input {
     background: transparent;
@@ -380,7 +387,7 @@ header {
 .trial-subscription__container {
     display: flex;
     width: 60%;
-    margin: 2rem auto 1rem auto;
+    margin: 0 auto;
     padding: 0.75rem 0.5rem 0.75rem 1rem;
     justify-content: space-between;
     align-items: center;
@@ -391,6 +398,10 @@ header {
     font-style: normal;
     font-weight: 500;
     color: var(--font-color-light);
+}
+
+.trial-subscription__container.remove {
+    display: none;
 }
 
 .trial-subscription__container div {
@@ -415,6 +426,140 @@ header {
     border: none;
 }
 
+/* SETUP GUIDE SECTION */
+.setup-guide__container {
+    width: 60%;
+    margin: 2rem auto;
+    padding: 0.75rem 0.5rem 0.75rem 1rem;
+    border-radius: 1.125rem;
+    border: 1px solid var(--stroke-s50);
+    background: var(--layout-color-1);
+}
+
+.setup-guide__container section:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--font-color-dark);
+}
+
+.setup-guide__container section:nth-child(1) div span:nth-child(1) {
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.setup-guide__container section:nth-child(1) div p {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    margin: .5rem 0;
+}
+
+/* .setup-guide__accordion {
+    transition: all ease-in-out 2s;
+} */
+
+.setup-guide__accordion {
+    display: none;
+}
+
+.setup-guide__accordion.open-accordion {
+    display: block;
+}
+
+.setup-guide__accordion--button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: .2rem .3rem;
+    border-radius: .324rem;
+}
+
+/* .setup-guide__accordion--button svg {
+
+} */
+
+.setup-guide__accordion--visible-icon {
+    display: none;
+}
+
+.setup-guide__accordion--button:hover {
+    background: var(--stroke-s50);
+}
+
+/* .setup-guide__accordion--button:focus {
+    outline: none;
+    border: 0.125rem solid var(--focused-state);
+} */
+
+.setup-guide__container ul {
+    list-style: none;
+    margin-top: .6rem;
+}
+
+/* change to flex-start when active */
+.setup-guide__container ul li {
+    display: flex;
+    justify-content: space-between;
+    gap: .8rem;
+    margin: 1rem 0;
+}
+
+/* change to flex-start when active */
+.setup-guide__container ul li div:nth-child(1) {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+/* WHEN ACTIVE ONLY */
+.setup-guide__container ul li {
+    padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+    border-radius: 0.625rem;
+    background: var(--stroke-s400);
+}
+
+.setup-guide__container ul li button:nth-child(1) {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.setup-guide__list-title,
+.setup-guide__list-content {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--font-color-dark);
+}
+
+.setup-guide__list-content {
+    color: var(--font-color-mid);
+    margin: 1.6rem 0;
+}
+
+.setup-guide__list-content--button {
+    background: var(--stroke-s500);
+    font-size: 0.75rem;
+    color: var(--font-color-light);
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+
+    border-radius: 0.375rem;
+}
+
+.setup-guide__list-content--button:hover {
+    background: #2A2A2A;
+}
+
+.setup-guide__list-content--button:active {
+    background: #2B2B2B;
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 3px 0px 0px #000 inset;
+}
+
+.setup-guide__list-content--button:focus {
+    background: #404040;
+    box-shadow: 0px 0px 0px 5px #005BD3, 0px 0px 0px 3px #FFF, 0px 0px 0px 1.5px #333;
+}
 
 /* MOBILE QUERY */
 @media (max-width: 599px) {
@@ -444,11 +589,11 @@ header {
         padding-left: 0;
     }
 
-    .nav__profile--brand-name {
+    .nav__profile-menu--brand-name {
         display: none;
     }
 
-    .nav__profile-button {
+    .nav__profile-menu-button {
         padding: .35rem
     }
 }
