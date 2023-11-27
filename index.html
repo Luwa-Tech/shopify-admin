@@ -26,8 +26,10 @@
                 <form class="nav__form">
                     <button type="submit" class="nav__form--search-button" aria-label="Search">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.3226 13.3833C11.3996 14.0841 10.2484 14.5 9 14.5C5.96243 14.5 3.5 12.0376 3.5 9C3.5 5.96243 5.96243 3.5 9 3.5C12.0376 3.5 14.5 5.96243 14.5 9C14.5 10.2484 14.0841 11.3996 13.3833 12.3226L16.2803 15.2197C16.5732 15.5126 16.5732 15.9874 16.2803 16.2803C15.9874 16.5732 15.5126 16.5732 15.2197 16.2803L12.3226 13.3833ZM13 9C13 11.2091 11.2091 13 9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9Z" fill="#B5B5B5"/>
-                          </svg>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12.3226 13.3833C11.3996 14.0841 10.2484 14.5 9 14.5C5.96243 14.5 3.5 12.0376 3.5 9C3.5 5.96243 5.96243 3.5 9 3.5C12.0376 3.5 14.5 5.96243 14.5 9C14.5 10.2484 14.0841 11.3996 13.3833 12.3226L16.2803 15.2197C16.5732 15.5126 16.5732 15.9874 16.2803 16.2803C15.9874 16.5732 15.5126 16.5732 15.2197 16.2803L12.3226 13.3833ZM13 9C13 11.2091 11.2091 13 9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9Z"
+                                fill="#B5B5B5" />
+                        </svg>
                     </button>
 
                     <input class="nav__form--input" type="text" placeholder="Search" aria-label="Search Input" />
@@ -109,11 +111,17 @@
                                 <img src="https://crushingit.tech/hackathon-assets/icon-store.svg" />
                                 <span>All stores</span>
                             </button></li>
+
+                        <hr class="custom-line">
+
                         <li class="nav__menu--item"><button role="menuitem">Help Center</button></li>
                         <li class="nav__menu--item"><button role="menuitem">Changelog</button></li>
                         <li class="nav__menu--item"><button role="menuitem">Community forums</button></li>
                         <li class="nav__menu--item"><button role="menuitem">Hire a Shopify partner</a></li>
                         <li class="nav__menu--item"><button role="menuitem">Keyboard shortcuts</button></li>
+
+                        <hr class="custom-line">
+
                         <li class="nav__menu--item"><button role="menuitem">
                                 <span>David Micheal</span>
                                 <span>davidmicheal@gmail.com</span>
@@ -147,120 +155,165 @@
                 <div>
                     <span>Setup guide</span>
                     <p>Use this personalized guide to get your store up and running.</p>
-                    <!-- <span>1 / 5 completed</span> -->
+                    <div class="progress-container">
+                        <span class="progress-text">0/5 completed</span>
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
                 </div>
 
                 <button type="button" aria-haspopup="true" aria-expanded="false" aria-controls="setup-guide__accordion"
                     id="setup-guide" class="setup-guide__accordion--button">
                     <!-- accordion hidden icon -->
-                    <svg class="setup-guide__accordion--hidden-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg class="setup-guide__accordion--hidden-icon" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 20 20" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M5.71967 8.46967C6.01256 8.17678 6.48744 8.17678 6.78033 8.46967L10.25 11.9393L13.7197 8.46967C14.0126 8.17678 14.4874 8.17678 14.7803 8.46967C15.0732 8.76256 15.0732 9.23744 14.7803 9.53033L10.7803 13.5303C10.4874 13.8232 10.0126 13.8232 9.71967 13.5303L5.71967 9.53033C5.42678 9.23744 5.42678 8.76256 5.71967 8.46967Z"
                             fill="#4A4A4A" />
                     </svg>
                     <!-- accordion visible icon -->
-                    <svg class="setup-guide__accordion--visible-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5303 12.2803C14.2374 12.5732 13.7626 12.5732 13.4697 12.2803L10 8.81066L6.53033 12.2803C6.23744 12.5732 5.76256 12.5732 5.46967 12.2803C5.17678 11.9874 5.17678 11.5126 5.46967 11.2197L9.46967 7.21967C9.76256 6.92678 10.2374 6.92678 10.5303 7.21967L14.5303 11.2197C14.8232 11.5126 14.8232 11.9874 14.5303 12.2803Z" fill="#4A4A4A"/>
-                      </svg>
+                    <svg class="setup-guide__accordion--visible-icon" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 20 20" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M14.5303 12.2803C14.2374 12.5732 13.7626 12.5732 13.4697 12.2803L10 8.81066L6.53033 12.2803C6.23744 12.5732 5.76256 12.5732 5.46967 12.2803C5.17678 11.9874 5.17678 11.5126 5.46967 11.2197L9.46967 7.21967C9.76256 6.92678 10.2374 6.92678 10.5303 7.21967L14.5303 11.2197C14.8232 11.5126 14.8232 11.9874 14.5303 12.2803Z"
+                            fill="#4A4A4A" />
+                    </svg>
                 </button>
             </section>
 
             <section class="setup-guide__accordion" aria-labelledby="setup-guide">
-                <ul>
-                    <li>
-                        <div>
-                            <button type="button">
+                <ul role="list">
+                    <li class="setup-guide__accordion--list" role="listitem">
+                            <button type="button" class="setup-guide__complete-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
                                         stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
                                 </svg>
                             </button>
-                            <article>
-                                <h2 class="setup-guide__list-title">Customize your online store</h2>
-                                <!-- ACTIVATE WHEN CLICKED -->
-                                <p class="setup-guide__list-content">Choose a theme and add your logo, colors, and images to
-                                    reflect your brand.<a href="#">Learn more</a></p>
-                                <button type="button" class="setup-guide__list-content--button">Customize theme</button>
-                            </article>
-                        </div>
-                        <img src="https://crushingit.tech/hackathon-assets/customise-store.png" alt="customize theme" />
+                        <article>
+                            <h2 class="setup-guide__list-title" aria-haspopup="true" aria-expanded="false" aria-controls="setup-guide__accordion--content" id="accordion-title">Customize your online store</h2>
+                            <section class="setup-guide__accordion--content" aria-labelledby="accordion-title">
+                                <div class="setup-guide__list-content-container">
+                                    <div>
+                                        <p class="setup-guide__list-content">Choose a theme and add your logo, colors, and
+                                            images to
+                                            reflect your brand.<a href="#">Learn more</a></p>
+                                        <button type="button" class="setup-guide__list-content--button">Customize
+                                            theme</button>
+                                    </div>
+                                    <img src="https://crushingit.tech/hackathon-assets/customise-store.png"
+                                    alt="customize theme" />
+                                </div>
+                            </section>
+
+                        </article>
                     </li>
 
-                    <li>
-                        <div>
-                            <button type="button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
-                                </svg>
-                            </button>
-                            <article>
-                                <h2 class="setup-guide__list-title">Add your first product</h2>
-                                <!-- ACTIVATE WHEN CLICKED -->
-                                <p class="setup-guide__list-content">Write a description, add photos, and set pricing for the products you plan to sell. <a href="#">Learn more</a></p>
-                                <button type="button" class="setup-guide__list-content--button">Add product</button>
-                            </article>
-                        </div>
-                        <img src="https://crushingit.tech/hackathon-assets/product.png" alt="customize theme" />
+                    <li class="setup-guide__accordion--list" role="listitem">
+                        <button type="button" class="setup-guide__complete-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
+                            </svg>
+                        </button>
+                        <article>
+                            <h2 class="setup-guide__list-title" aria-haspopup="true" aria-expanded="false" aria-controls="setup-guide__accordion--content" id="accordion-title">Add your first product</h2>
+                            <section class="setup-guide__accordion--content" aria-labelledby="accordion-title">
+                                <div class="setup-guide__list-content-container">
+                                    <div>
+                                        <p class="setup-guide__list-content">Write a description, add photos, and set
+                                            pricing for the products you plan to sell. <a href="#">Learn more</a></p>
+                                            <div class="setup-guide__list-content--button-container">
+                                                <button type="button" class="setup-guide__list-content--button">Add product</button>
+                                                <button type="button" class="setup-guide__list-content--button2">Import product</button>
+                                            </div>
+                                    </div>
+                                        <img src="https://crushingit.tech/hackathon-assets/product.png"
+                                            alt="product preview" />
+                                </div>
+                            </section>
+
+                        </article>
                     </li>
 
-                    <li>
-                        <div>
-                            <button type="button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
-                                </svg>
-                            </button>
-                            <article>
-                                <h2 class="setup-guide__list-title">Add a custom domain</h2>
-                                <!-- ACTIVATE WHEN CLICKED -->
-                                <p class="setup-guide__list-content">Your current domain is 222219.myshopify.com but you can add a custom domain to help customers find your online store. <a href="#">Learn more</a></p>
-                                <button type="button" class="setup-guide__list-content--button">Add domain</button>
-                            </article>
-                        </div>
-                        <img src="https://crushingit.tech/hackathon-assets/website.png" alt="customize theme" />
+                    <li class="setup-guide__accordion--list" role="listitem">
+                        <button type="button" class="setup-guide__complete-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
+                            </svg>
+                        </button>
+                        <article>
+                            <h2 class="setup-guide__list-title" aria-haspopup="true" aria-expanded="false" aria-controls="setup-guide__accordion--content" id="accordion-title">Add a custom domain</h2>
+                            <section class="setup-guide__accordion--content" aria-labelledby="accordion-title">
+                                <div class="setup-guide__list-content-container">
+                                    <div>
+                                        <p class="setup-guide__list-content">Your current domain is 222219.myshopify.com but
+                                            you can add a custom domain to help customers find your online store. <a
+                                                href="#">Learn more</a></p>
+                                        <button type="button" class="setup-guide__list-content--button">Add domain</button>
+                                    </div>
+                                        <img src="https://crushingit.tech/hackathon-assets/website.png"
+                                            alt="custom domain preview" />
+                                </div>
+                            </section>
+
+                        </article>
                     </li>
 
-                    <li>
-                        <div>
-                            <button type="button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
-                                </svg>
-                            </button>
-                            <article>
-                                <h2 class="setup-guide__list-title">Name your store</h2>
-                                <!-- ACTIVATE WHEN CLICKED -->
-                                <p class="setup-guide__list-content">Your temporary store name is Davii collections. The store name appears in your admin and online store. <a href="#">Learn more</a></p>
-                                <button type="button" class="setup-guide__list-content--button">Name store</button>
-                            </article>
-                        </div>
-                        <img src="https://crushingit.tech/hackathon-assets/name-store.png" alt="customize theme" />
+                    <li class="setup-guide__accordion--list" role="listitem">
+                        <button type="button" class="setup-guide__complete-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
+                            </svg>
+                        </button>
+                        <article>
+                            <h2 class="setup-guide__list-title" aria-haspopup="true" aria-expanded="false" aria-controls="setup-guide__accordion--content" id="accordion-title">Name your store</h2>
+                            <section class="setup-guide__accordion--content" aria-labelledby="accordion-title">
+                                <div class="setup-guide__list-content-container">
+                                    <div>
+                                        <p class="setup-guide__list-content">Your temporary store name is Davii collections.
+                                            The store name appears in your admin and online store. <a href="#">Learn
+                                                more</a></p>
+                                        <button type="button" class="setup-guide__list-content--button">Name store</button>
+                                    </div>
+                                        <img src="https://crushingit.tech/hackathon-assets/name-store.png"
+                                            alt="store preview" />
+                                </div>
+                            </section>
+
+                        </article>
                     </li>
 
-                    <li>
-                        <div>
-                            <button type="button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
-                                        stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
-                                </svg>
-                            </button>
-                            <article>
-                                <h2 class="setup-guide__list-title">Setup a payment provider</h2>
-                                <!-- ACTIVATE WHEN CLICKED -->
-                                <p class="setup-guide__list-content">Choose a payment provider to start accepting payments. You'll need to create an account with the payment provider and set it up with Shopify store. <a href="#">Learn more</a></p>
-                                <button type="button" class="setup-guide__list-content--button">Setup payment</button>
-                            </article>
-                        </div>
-                        <img src="https://crushingit.tech/hackathon-assets/payment.png" alt="customize theme" />
+                    <li class="setup-guide__accordion--list" role="listitem">
+                        <button type="button" class="setup-guide__complete-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
+                            </svg>
+                        </button>
+                        <article>
+                            <h2 class="setup-guide__list-title" aria-haspopup="true" aria-expanded="false" aria-controls="setup-guide__accordion--content" id="accordion-title">Setup a payment provider</h2>
+                            <section class="setup-guide__accordion--content" aria-labelledby="accordion-title">
+                                <div class="setup-guide__list-content-container">
+                                    <div>
+                                        <p class="setup-guide__list-content">Choose a payment provider to start accepting
+                                            payments. You'll need to create an account with the payment provider and set it
+                                            up with Shopify store. <a href="#">Learn more</a></p>
+                                        <button type="button" class="setup-guide__list-content--button">Setup
+                                            payment</button>
+                                    </div>
+                                        <img src="https://crushingit.tech/hackathon-assets/payment.png"
+                                            alt="payment provider preview" />
+                                </div>
+                            </section>
+
+                        </article>
                     </li>
                 </ul>
             </section>
