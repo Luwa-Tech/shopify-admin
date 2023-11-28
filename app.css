@@ -493,6 +493,10 @@ header {
     border-radius: .324rem;
 }
 
+/* .setup-guide__accordion--button svg {
+    transition: display 0.5s ease-in-out;
+} */
+
 .setup-guide__accordion--visible-icon {
     display: none;
 }
@@ -547,23 +551,11 @@ header {
     display: block;
 }
 
-/* change to flex-start when active */
-/* .setup-guide__container ul li div:nth-child(1) {
-    display: flex;
-    align-items: flex-start;
-    gap: .5rem;
-} */
-
-/* WHEN ACTIVE ONLY */
-/* .setup-guide__container ul li {
+.setup-guide__accordion--list.add-style {
+    background: var(--stroke-s400);
     padding: 0.5rem 0.5rem 0.75rem 0.5rem;
     border-radius: 0.625rem;
-    background: var(--stroke-s400);
-} */
-
-/* .setup-guide__accordion--list.active {
-    background: var(--stroke-s400);
-} */
+}
 
 .progress-container {
     display: flex;
