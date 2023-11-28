@@ -15,8 +15,8 @@ const app = () => {
   const setupGuideListAccordionTriggers = document.querySelectorAll(".setup-guide__list-title");
   const setupGuideListAccordionContents = document.querySelectorAll(".setup-guide__accordion--content");
   const setupGuideListItems = document.querySelectorAll(".setup-guide__accordion--list");
-  const setupGuideCompleteButtons = document.querySelectorAll(".setup-guide__complete-button");
-  const progressBar = document.querySelector(".progress-bar");
+  // const setupGuideCompleteButtons = document.querySelectorAll(".setup-guide__complete-button");
+  const progressBar = document.querySelector(".progress-bar-full");
   const progressText = document.querySelector(".progress-text");
 
 
@@ -172,12 +172,15 @@ const app = () => {
   }
 
 
+  // 3i. when user clicks on the complete button, open the contents associated with the button, increase the number of steps completed and update the progress bar.
+// 3ii. when user clicks the complete button again, decrease number of completed steps and update the progress bar.
+
   let currentStep = 0;
-  const totalSteps = 5;
+  const totalSteps = setupGuideListItems.length;
 
   const updateProgress = () => {
     const percentage = (currentStep / totalSteps) * 100;
-    progressBar.style.width = `${percentage}`;
+    progressBar.style.width = `${percentage}%`;
     progressText.textContent = `${currentStep} / ${totalSteps} completed`;
   }
 
@@ -195,22 +198,48 @@ const app = () => {
     }
   }
 
-
   const toggleSetupGuideListAccordionButton = () => {
+    // setupGuideListItems.forEach((step, index) => {
+    //   const completeButton = step.querySelector(".setup-guide__complete-button");
+    //   completeButton.addEventListener("click", () => {
+          // if(!step.classList.contains("completed")) {
+          //   step.classList.add("completed");
+          //   incrementCompleteStep();
+          // } else {
+          //   step.classList.remove("completed");
+          //   decrementCompleteStep();
+          // }
+    //   });
+    // });
 
-    setupGuideCompleteButtons.forEach((button, index) => {
-      button.addEventListener("click", () => {
-        setupGuideListAccordionContents.forEach((content, contentIndex) => {
-          if (index === contentIndex) {
-            content.classList.toggle("active");
-          } else {
-            content.classList.remove("active");
-          }
-        });
+    setupGuideListItems.forEach((step, index) => {
+      const completeBtn = step.querySelector(".setup-guide__complete-button");
+      const hiddenContent = step.querySelector(".setup-guide__accordion--content");
+
+      completeBtn.addEventListener("click", () => {
+        //Toggle list style
+        if (hiddenContent.style.display === "none" || hiddenContent.style.display === "") {
+          hiddenContent.style.display = "block";
+          step.classList.add("add-style");
+        } else {
+          hiddenContent.style.display = "none";
+          step.classList.remove("add-style");
+        }
+
+        if(!step.classList.contains("completed")) {
+          step.classList.add("completed");
+          incrementCompleteStep();
+        } else {
+          step.classList.remove("completed");
+          decrementCompleteStep();
+        }
+
       })
     })
   }
 
+
+  // .setup-guide__accordion--content
   setupGuideListAccordionTriggers.forEach((trigger, index) => {
     trigger.addEventListener('click', () => {
       setupGuideListAccordionContents.forEach((content, contentIndex) => {
@@ -222,7 +251,7 @@ const app = () => {
       });
     });
   });
-
+//create a helper function that coma
 
 
 
@@ -233,8 +262,27 @@ const app = () => {
   trialSubscriptionButton.addEventListener("click", handleTrialSubscription);
   accordionPanelButton.addEventListener("click", toggleAccordionPanel);
   toggleSetupGuideListAccordionButton();
-
 }
 
 //load app
 app()
+
+
+// 1. close the notification bar when keyboard user presses the escape key.
+// 2. display the contents of the first setup guide step when all users open it.
+
+// 4. fix "add your first product" section button.
+// 5. add keyboard-users accessibility to setup guide items.
+
+
+    // setupGuideCompleteButtons.forEach((button, index) => {
+    //   button.addEventListener("click", () => {
+    //     setupGuideListAccordionContents.forEach((content, contentIndex) => {
+    //       if (index === contentIndex) {
+    //         content.classList.toggle("active");
+    //       } else {
+    //         content.classList.remove("active");
+    //       }
+    //     });
+    //   })
+    // })

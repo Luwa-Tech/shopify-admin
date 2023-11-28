@@ -578,28 +578,20 @@ header {
 }
 
 .progress-bar {
-    position: relative;
     width: 7rem;
     height: .5rem;
     background-color: var(--font-color-light);
     border-radius: 1.5rem;
     margin-top: .2rem;
-    transition: width 0.5s ease-in-out;
 }
 
-.progress-bar::before {
-    content: "";
-    display: flex;
-    align-items: center;
-    position: absolute;
-    left: 0rem;
-    top: 0rem;
-    bottom: 0rem;
-    width: 10%;
-    min-width: .3rem;
+.progress-bar-full {
+    height: .5rem;
     background-color: #1A1A1A;
+    width: 0%;
+    min-width: .3rem;
     border-radius: 1em;
-    /* border: 2px solid red; */
+    transition: width 0.5s ease-in-out;
 }
 
 .setup-guide__container ul li button:nth-child(1) {
