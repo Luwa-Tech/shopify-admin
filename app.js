@@ -20,6 +20,8 @@ const app = () => {
 
 
   // -----------------Functions related to the notification list and its accessibility-------------//
+
+  // 1. close the notification bar when keyboard user presses the escape key. :FIXED
   const closeNotificationList = () => { 
     notificationListTrigger.ariaExpanded = "false";
     notificationListTrigger.focus()
@@ -146,8 +148,17 @@ const app = () => {
   }
 
   const toggleAccordionPanel = () => {
+    const setupGuideLiItems = document.querySelectorAll(".setup-guide__accordion--list");
+    const firstSetupGuideLiItem = setupGuideLiItems[0];
+    const hiddenContent = firstSetupGuideLiItem.querySelector(".setup-guide__accordion--content");
+  
+
     const isAccordionExpanded = accordionPanelButton.attributes["aria-expanded"].value === "true";
     accordionPanel.classList.toggle("open-accordion");
+
+    firstSetupGuideLiItem.classList.add("add-style");
+    hiddenContent.style.display = "block";
+
 
     if (isAccordionExpanded) {
       closeAccordion();
@@ -280,13 +291,10 @@ const app = () => {
 //initialize app
 app()
 
-  // 3i. when user clicks on the complete button, open the contents associated with the button, increase the number of steps completed and update the progress bar. toggle the aria-expanded property
-  // 3ii. when user clicks the complete button again, decrease number of completed steps and update the progress bar. toggle the aria-expanded property
 
 // 1. close the notification bar when keyboard user presses the escape key.
 // 2. display the contents of the first setup guide step when all users open it and add focus to it.
-// 4. fix "add your first product" section button.
 // 5. add keyboard-users accessibility to setup guide items.
 // 6. refactor and comment code.
 // 7. check form focus issue.
-// 8. add transitions to obvious elements.
+// 8. add transitions to obvious elements. e.g accordion container and icons, 

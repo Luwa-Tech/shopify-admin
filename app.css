@@ -450,6 +450,7 @@ header {
 
 .setup-guide__accordion {
     display: none;
+    transition: all ease-in-out 0.3s;
 }
 
 .setup-guide__accordion.open-accordion {
