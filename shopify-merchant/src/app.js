@@ -157,6 +157,7 @@ const app = () => {
     accordionPanel.classList.toggle("open-accordion");
 
     firstSetupGuideLiItem.classList.add("add-style");
+    //firstSetupGuideLiItem.focus();
     hiddenContent.style.display = "block";
 
 
