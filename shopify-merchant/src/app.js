@@ -19,11 +19,11 @@ const app = () => {
 
 
 
-  // -----------------Functions related to the notification list and its accessibility-------------//
+  // -----------------Functions related to the notification list and its accessibility------------//
 
   // 1. close the notification bar when keyboard user presses the escape key. :FIXED
   const closeNotificationList = () => { 
-    notificationListTrigger.ariaExpanded = "false";
+    notificationListTrigger.ariaExpanded ="false";
     notificationListTrigger.focus()
   }
 
